@@ -7,16 +7,17 @@ chai.use(chaiHttp);
 
 describe('Server access', () =>{
 
-  // after(function (done) {
-  //     server.close();
-  //     done();
-  // });
+  afterAll(function (done) {
+    // server.close()
+    // does not work, --forceExit used on npm run tests
+  });
 
   describe('GET /vote_hot', () => {
     it('responds with status 200', function(done){
       chai.request(app)
       .get('/vote_hot')
       .end((err,res) => {
+        // ends the response process
         expect(res).to.have.status(200);
         done();
       });

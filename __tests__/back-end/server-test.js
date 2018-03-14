@@ -1,13 +1,13 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
-let server = require('../src/server.js').server;
-let app = require('../src/server.js').app;
-let should = chai.should();
+let server = require('../../src/server.js').server;
+let app = require('../../src/server.js').app;
+let expect = chai.expect;
 
 chai.use(chaiHttp);
 
 
-describe('server access', () =>{
+describe('Server access', () =>{
 
   // after(function (done) {
   //     server.close();
@@ -15,39 +15,35 @@ describe('server access', () =>{
   // });
 
 
-
-  describe('GET /vote_hot route', ()=> {
-    it('works', function(done){
-    chai.request(app)
+  describe('GET /vote_hot', () => {
+    it('responds with status 200', function(done){
+      chai.request(app)
       .get('/vote_hot')
-      .end((err,res)=> {
-        res.should.have.status(200);
-        res.text.should.be.eql('1');
+      .end((err,res) => {
+        expect(res).to.have.status(200);
         done();
       });
     });
   });
 
-  describe('GET /vote_cold route', ()=> {
-    it('works', function(done){
-    chai.request(app)
+  describe('GET /vote_cold', () => {
+    it('responds with status 200', function(done){
+      chai.request(app)
       .get('/vote_cold')
-      .end((err,res)=> {
-        res.should.have.status(200);
-        res.text.should.be.eql('0');
-      done();
+      .end((err,res) => {
+        expect(res).to.have.status(200);
+        done();
       });
     });
   });
 
-  describe('GET /vote_neutral route', ()=> {
-    it('works', function(done){
-    chai.request(app)
+  describe('GET /vote_neutral', () => {
+    it('responds with status 200', function(done){
+      chai.request(app)
       .get('/vote_neutral')
-      .end((err,res)=> {
-        res.should.have.status(200);
-        res.text.should.eql('0')
-      done();
+      .end((err,res) => {
+        expect(res).to.have.status(200);
+        done();
       });
     });
   });

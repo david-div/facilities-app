@@ -1,11 +1,9 @@
-let chai = require('chai');
-let chaiHttp = require('chai-http');
-let server = require('../../src/server.js').server;
-let app = require('../../src/server.js').app;
-let expect = chai.expect;
+import chai from 'chai'
+import { expect } from 'chai'
+import chaiHttp from 'chai-http';
+import { server, app } from '../../src/server.js'
 
 chai.use(chaiHttp);
-
 
 describe('Server access', () =>{
 
@@ -13,7 +11,6 @@ describe('Server access', () =>{
   //     server.close();
   //     done();
   // });
-
 
   describe('GET /vote_hot', () => {
     it('responds with status 200', function(done){

@@ -1,5 +1,5 @@
 import React from 'react';
-// import './index.css';
+import './VoteButton.css';
 
 class VoteButton extends React.Component {
   render() {

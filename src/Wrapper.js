@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VoteButton from './VoteButton.js';
+import VoteButton from './VoteButton/VoteButton.js';
 import axios from 'axios';
 
 // import VoteColdButton from './VoteColdButton.js';
@@ -85,21 +85,21 @@ class Wrapper extends Component {
           count={this.state.hotVote}
           onclick={() => this.buttonClick('hot')}
           buttonID={'HotButton'}
-          className={'Hot Class'}
+          className={'hot-button'}
           buttonText={'Hot'}
         />
         <VoteButton
           count={this.state.coldVote}
           onclick={() => this.buttonClick('cold')}
           buttonID={'ColdButton'}
-          className={'Cold Class'}
+          className={'cold-button'}
           buttonText={'Cold'}
         />
         <VoteButton
           count={this.state.neutralVote}
           onclick={() => this.buttonClick('neutral')}
-          buttonID={'Neutral Button'}
-          className={'Neutral Class'}
+          buttonID={'NeutralButton'}
+          className={'neutral-button'}
           buttonText={'Neutral'}
         />
         cookieID :{this.props.user}

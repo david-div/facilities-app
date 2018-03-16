@@ -1,20 +1,17 @@
 import React from 'react';
 import './VoteButton.css';
 
-class VoteButton extends React.Component {
-  render() {
+const voteButton = (props) => {
     return (
-      <div className={this.props.className}>
-        <header className="App-header" />
-        <button id={this.props.buttonID} onClick={this.props.onclick}>
-          Vote {this.props.buttonText}!
+      <div className={props.className}>
+        <button id={props.buttonID} onClick={props.onclick}>
+          Vote {props.buttonText}!
         </button>
-        <p id={this.props.buttonText+ "voteDisplay"}>
-          Current votes for {this.props.buttonText}: {this.props.count}
+        <p id={props.buttonText + "voteDisplay"}>
+          Current votes for {props.buttonText}: {props.count}
         </p>
       </div>
     );
-  }
 }
 //find root and replace
-export default VoteButton;
+export default voteButton;

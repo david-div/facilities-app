@@ -10,9 +10,9 @@ class Wrapper extends Component {
     super(props);
     this.buttonClick = this.buttonClick.bind(this);
     this.state = {
-      hotVote: 100,
-      coldVote: 200,
-      neutralVote: 300
+      hotVote: 0,
+      coldVote: 0,
+      neutralVote: 0
     };
   }
 
